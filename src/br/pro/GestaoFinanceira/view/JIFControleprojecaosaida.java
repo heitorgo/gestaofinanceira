@@ -174,7 +174,7 @@ public class JIFControleprojecaosaida extends javax.swing.JInternalFrame {
             if(atualizarObjeto()){    
                 if(DAO.verificarpagamento(obj)){
                     JOptionPane.showMessageDialog(rootPane, "Atualizado com sucesso", "Atualizar", JOptionPane.WARNING_MESSAGE);
-                    br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
+                    br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
                     jbCheck.setEnabled(false);
                     obj.AtualizarStatus(true);
                     jbPesquisarActionPerformed(evt); 

@@ -10,8 +10,6 @@ import br.pro.GestaoFinanceira.data.EmpresaData;
 import br.pro.GestaoFinanceira.model.CustosModel;
 import br.pro.GestaoFinanceira.model.EmpresaModel;
 import java.util.ArrayList;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.text.MaskFormatter;
@@ -420,9 +418,9 @@ public class JIFCadCustos extends javax.swing.JInternalFrame {
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
         //chamando metodos da classe formulario
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, true);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, true);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         //configurando os botões
         jlIdcusto1.setText("0");
         jbNovo.setEnabled(false);
@@ -432,9 +430,9 @@ public class JIFCadCustos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbNovoActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, false);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, false);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         jlIdcusto1.setText("0");
         jbNovo.setEnabled(true);
         jbSalvar.setEnabled(false);
@@ -445,7 +443,7 @@ public class JIFCadCustos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbCancelarActionPerformed
 
     private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, true);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, true);
         jcbEmpresa.setEnabled(false);
         jbSalvar1.setEnabled(true);
         jbCancelar1.setEnabled(true);
@@ -519,9 +517,9 @@ public class JIFCadCustos extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbSalvar1ActionPerformed
 
     private void jbCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar1ActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, false);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, false);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         jbEditar.setEnabled(false);
         jbSalvar1.setEnabled(false);
         jbCancelar1.setEnabled(false);

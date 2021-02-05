@@ -674,9 +674,9 @@ public class JIFCadCliente extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbCancelar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelar1ActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, false);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, false);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         jbNovo.setEnabled(true);
         jbSalvar.setEnabled(false);
         jbSalvar1.setEnabled(false);
@@ -760,7 +760,7 @@ public class JIFCadCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbExcluirActionPerformed
 
     private void jbEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbEditarActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, true);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, true);
         jbSalvar.setEnabled(true);
         jbSalvar1.setEnabled(true);
         jbCancelar.setEnabled(true);
@@ -790,15 +790,6 @@ public class JIFCadCliente extends javax.swing.JInternalFrame {
             int linha = jtbDados.getSelectedRow();
             if(linha>-1){
                 jlIdcliente1.setText(jtbDados.getValueAt(linha, 0).toString());
-                //jtDtanasccliente.setText(jtbDados.getValueAt(linha, 3).toString());
-                //jtCidadecliente.setText(""+lista.get(linha).getCidadecliente());
-                //jtNumcasacliente.setText(""+lista.get(linha).getNumcasacliente());
-                //jtComplcasacliente.setText(""+lista.get(linha).getComplcliente());
-                //jtContatocliente.setText(""+lista.get(linha).getContatocliente());
-                //jtNomecliente.setText(jtbDados.getValueAt(linha, 1).toString());
-                //jtCpfcliente.setText(jtbDados.getValueAt(linha, 2).toString());
-                //jtEmailcliente.setText(""+lista.get(linha).getEmailcliente());
-                //jtRuacliente.setText(""+lista.get(linha).getRuacliente());
                 jtDatanasccliente1.setText(jtbDados.getValueAt(linha, 3).toString());
                 jtCidadecliente1.setText(""+lista.get(linha).getCidadecliente());
                 jtNumcasacliente1.setText(""+lista.get(linha).getNumcasacliente());
@@ -839,9 +830,9 @@ public class JIFCadCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jtNumcasaclienteActionPerformed
 
     private void jbCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbCancelarActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, false);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, false);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         jbNovo.setEnabled(true);
         jbSalvar.setEnabled(false);
         jbSalvar1.setEnabled(false);
@@ -871,9 +862,9 @@ public class JIFCadCliente extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jbSalvarActionPerformed
 
     private void jbNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbNovoActionPerformed
-        br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
-        br.pro.GestaoEmpresarial.extras.Formularios.tratarCampos(this, true);
-        br.pro.GestaoEmpresarial.extras.Formularios.limparTabela(jtbDados);
+        br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
+        br.pro.GestaoFinanceira.extras.Formularios.tratarCampos(this, true);
+        br.pro.GestaoFinanceira.extras.Formularios.limparTabela(jtbDados);
         jlIdcliente1.setText("0");
         jbNovo.setEnabled(false);
         jbSalvar.setEnabled(true);

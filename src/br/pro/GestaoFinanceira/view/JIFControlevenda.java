@@ -174,7 +174,7 @@ public class JIFControlevenda extends javax.swing.JInternalFrame {
             if(atualizarObjeto()){    
                 if(DAO.verificarrecebimento(obj)){
                     JOptionPane.showMessageDialog(rootPane, "Atualizado com sucesso", "Atualizar", JOptionPane.WARNING_MESSAGE);
-                    br.pro.GestaoEmpresarial.extras.Formularios.limparCampos(this);
+                    br.pro.GestaoFinanceira.extras.Formularios.limparCampos(this);
                     jbCheck.setEnabled(true);
                     jbAtualizarregistros.setEnabled(true);
                     obj.AtualizarStatus(true);
