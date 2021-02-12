@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class ClienteData extends Conexao{
     public ClienteData() throws Exception {}
     public boolean incluir(ClienteModel obj) throws Exception {
-        String sql="Insert into CLIENTE (NOME_CLIENTE, DTA_NASC_CLIENTE, CPF_CLIENTE, EMAIL_CLIENTE, CIDADE_CLIENTE, RUA_CLIENTE, NUMCASA_CLIENTE, COMPL_CLIENTE, CONTATO_CLIENTE, ID_EMPRESA) values(?,?,?,?,?,?,?,?,?,?)";
+        String sql="Insert into CLIENTE (NOMECLIENTE, DTANASCCLIENTE, CPFCLIENTE, EMAILCLIENTE, CIDADECLIENTE, RUACLIENTE, NUMCASACLIENTE, COMPLCLIENTE, CONTATOCLIENTE, IDEMPRESA) values(?,?,?,?,?,?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setString(1,obj.getNomecliente());
         ps.setString(2, obj.getDatanasccliente());
@@ -34,7 +34,7 @@ public class ClienteData extends Conexao{
         return ps.executeUpdate()>0;
     }
     public boolean editar(ClienteModel obj) throws Exception {
-        String sql="Update CLIENTE set NOME_CLIENTE=?, DTA_NASC_CLIENTE=?, CPF_CLIENTE=?, EMAIL_CLIENTE=?, CIDADE_CLIENTE=?, RUA_CLIENTE=?, NUMCASA_CLIENTE=?, COMPL_CLIENTE=?, CONTATO_CLIENTE=? where ID_CLIENTE=?";
+        String sql="Update CLIENTE set NOMECLIENTE=?, DTANASCCLIENTE=?, CPFCLIENTE=?, EMAILCLIENTE=?, CIDADECLIENTE=?, RUACLIENTE=?, NUMCASACLIENTE=?, COMPLCLIENTE=?, CONTATOCLIENTE=? where IDCLIENTE=?";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setString(1,obj.getNomecliente());
         ps.setString(2, obj.getDatanasccliente());
@@ -49,7 +49,7 @@ public class ClienteData extends Conexao{
         return ps.executeUpdate()>0;
     }
     public boolean excluir(int idcliente) throws Exception {
-        String sql="delete from CLIENTE where ID_CLIENTE=?";
+        String sql="delete from CLIENTE where IDCLIENTE=?";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setInt(1, idcliente);
         return ps.executeUpdate()>0;
@@ -58,22 +58,22 @@ public class ClienteData extends Conexao{
     public ArrayList<ClienteModel> pesquisar(String texto) throws Exception{
         ArrayList<ClienteModel> dados = new ArrayList<>();
         String[] palavras = texto.split(" ");
-        String sql="Select * from CLIENTE where CPF_CLIENTE like '%"+texto+"%'";
+        String sql="Select * from CLIENTE where CPFCLIENTE like '%"+texto+"%'";
         System.out.println(sql);
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
-            ClienteModel obj = new ClienteModel(rs.getInt("ID_CLIENTE"),
-                rs.getString("NOME_CLIENTE"),
-                rs.getString("DTA_NASC_CLIENTE"),
-                rs.getString("CPF_CLIENTE"),
-                rs.getString("EMAIL_CLIENTE"),
-                rs.getString("CIDADE_CLIENTE"),
-                rs.getString("RUA_CLIENTE"),
-                rs.getString("NUMCASA_CLIENTE"),
-                rs.getString("COMPL_CLIENTE"),
-                rs.getString("CONTATO_CLIENTE"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+            ClienteModel obj = new ClienteModel(rs.getInt("IDCLIENTE"),
+                rs.getString("NOMECLIENTE"),
+                rs.getString("DTANASCCLIENTE"),
+                rs.getString("CPFCLIENTE"),
+                rs.getString("EMAILCLIENTE"),
+                rs.getString("CIDADECLIENTE"),
+                rs.getString("RUACLIENTE"),
+                rs.getString("NUMCASACLIENTE"),
+                rs.getString("COMPLCLIENTE"),
+                rs.getString("CONTATOCLIENTE"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

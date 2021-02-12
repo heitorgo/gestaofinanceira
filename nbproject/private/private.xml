@@ -2,6 +2,19 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group/>
+        <group>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/DespesasData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/CustosFixosData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/PrestacaoServicoData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/DespesasFixasData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/ContasReceberData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/CustosData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/VendasData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/EmpresaData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/ClienteData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/UsuarioData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/ContasPagarData.java</file>
+            <file>file:/C:/Users/heito/Documents/NetBeansProjects/GestaoFinanceira/src/br/pro/GestaoFinanceira/data/Conexao.java</file>
+        </group>
     </open-files>
 </project-private>

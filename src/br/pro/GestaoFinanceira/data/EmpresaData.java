@@ -17,7 +17,7 @@ public class EmpresaData extends Conexao{
     public EmpresaData() throws Exception{};
     
     public boolean incluir(EmpresaModel obj) throws Exception {
-        String sql="insert into EMPRESA (NOME_EMPRESA, EMAIL_EMPRESA, CONTATO_EMPRESA, CIDADE_EMPRESA, RUA_EMPRESA, NUM_EMPRESA) values(?,?,?,?,?,?)";
+        String sql="insert into EMPRESA (NOMEEMPRESA, EMAILEMPRESA, CONTATOEMPRESA, CIDADEEMPRESA, RUAEMPRESA, NUMEMPRESA) values(?,?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setString(1,obj.getNomeempresa());
         ps.setString(2,obj.getEmailempresa());
@@ -29,7 +29,7 @@ public class EmpresaData extends Conexao{
     }
     
     public boolean editar(EmpresaModel obj) throws Exception {
-        String sql="Update EMPRESA set NOME_EMPRESA=?, EMAIL_EMPRESA=?, CONTATO_EMPRESA=?, CIDADE_EMPRESA=?, RUA_EMPRESA=?, NUM_EMPRESA=? where ID_EMPRESA=?";
+        String sql="Update EMPRESA set NOMEEMPRESA=?, EMAILEMPRESA=?, CONTATOEMPRESA=?, CIDADEEMPRESA=?, RUAEMPRESA=?, NUMEMPRESA=? where IDEMPRESA=?";
         System.out.println(sql);
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setString(1,obj.getNomeempresa());
@@ -43,7 +43,7 @@ public class EmpresaData extends Conexao{
     }
     
     public boolean excluir(int idempresa) throws Exception {
-        String sql="delete from EMPRESA where ID_EMPRESA=?";
+        String sql="delete from EMPRESA where IDEMPRESA=?";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setInt(1, idempresa);
         return ps.executeUpdate()>0;
@@ -51,18 +51,18 @@ public class EmpresaData extends Conexao{
     
     public ArrayList<EmpresaModel> pesquisar(String texto) throws Exception{
         ArrayList<EmpresaModel> dados = new ArrayList<>();
-        String sql="Select * from EMPRESA where NOME_EMPRESA like '"+texto+"%'";
+        String sql="Select * from EMPRESA where NOMEEMPRESA like '"+texto+"%'";
         System.out.println(sql);
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
-            EmpresaModel obj = new EmpresaModel(rs.getInt("ID_EMPRESA"),
-                rs.getString("NOME_EMPRESA"),
-                rs.getString("EMAIL_EMPRESA"),
-                rs.getString("CONTATO_EMPRESA"),
-                rs.getString("CIDADE_EMPRESA"),
-                rs.getString("RUA_EMPRESA"),
-                rs.getString("NUM_EMPRESA")
+            EmpresaModel obj = new EmpresaModel(rs.getInt("IDEMPRESA"),
+                rs.getString("NOMEEMPRESA"),
+                rs.getString("EMAILEMPRESA"),
+                rs.getString("CONTATOEMPRESA"),
+                rs.getString("CIDADEEMPRESA"),
+                rs.getString("RUAEMPRESA"),
+                rs.getString("NUMEMPRESA")
             );
             dados.add(obj);
         }   
@@ -71,17 +71,17 @@ public class EmpresaData extends Conexao{
     
     public ArrayList<EmpresaModel> carregarCombo() throws Exception{
         ArrayList<EmpresaModel> dados = new ArrayList<>();
-        String sql="Select * from EMPRESA order by ID_EMPRESA";
+        String sql="Select * from EMPRESA order by IDEMPRESA";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ResultSet rs = ps.executeQuery();
         while(rs.next()){
-            EmpresaModel obj = new EmpresaModel(rs.getInt("ID_EMPRESA"),
-                rs.getString("NOME_EMPRESA"),
-                rs.getString("EMAIL_EMPRESA"),
-                rs.getString("CONTATO_EMPRESA"),
-                rs.getString("CIDADE_EMPRESA"),
-                rs.getString("RUA_EMPRESA"),
-                rs.getString("NUM_EMPRESA")
+            EmpresaModel obj = new EmpresaModel(rs.getInt("IDEMPRESA"),
+                rs.getString("NOMEEMPRESA"),
+                rs.getString("EMAILEMPRESA"),
+                rs.getString("CONTATOEMPRESA"),
+                rs.getString("CIDADEEMPRESA"),
+                rs.getString("RUAEMPRESA"),
+                rs.getString("NUMEMPRESA")
             );
             dados.add(obj);
         }   

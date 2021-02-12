@@ -19,7 +19,7 @@ public class VendasData extends Conexao{
     public VendasData() throws Exception{}
     
     public boolean incluir(VendasModel obj) throws Exception {
-        String sql="insert into VENDAS (VALORVENDA, DATAVENDA, DETALHAMENTOVENDA, VERIFVENDA, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into VENDAS (VALORVENDA, DATAVENDA, DETALHAMENTOVENDA, VERIFVENDA, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValorvenda());
         ps.setString(2,obj.getDatavenda());
@@ -58,7 +58,7 @@ public class VendasData extends Conexao{
                 rs.getString("DATAVENDA"),
                 rs.getString("DETALHAMENTOVENDA"),
                 rs.getBoolean("VERIFVENDA"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

@@ -20,7 +20,7 @@ public class ContasReceberData extends Conexao{
     public ContasReceberData() throws Exception{}
     
     public boolean incluir(ContasReceberModel obj) throws Exception{
-        String sql="insert into CONTASRECEBER (VALORRECEBER, DATARECEBER, DETALHAMENTORECEBER, VERIFRECEBER, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into CONTASRECEBER (VALORRECEBER, DATARECEBER, DETALHAMENTORECEBER, VERIFRECEBER, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValorreceber());
         ps.setString(2,obj.getDatareceber());
@@ -59,7 +59,7 @@ public class ContasReceberData extends Conexao{
                 rs.getString("DATARECEBER"),
                 rs.getString("DETALHAMENTORECEBER"),
                 rs.getBoolean("VERIFRECEBER"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

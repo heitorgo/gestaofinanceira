@@ -20,7 +20,7 @@ public class PrestacaoServicoData extends Conexao{
     public PrestacaoServicoData() throws Exception{}
     
     public boolean incluir(PrestacaoServicoModel obj) throws Exception {
-        String sql="insert into PRESTACAOSERVICO (VALORSERVICO, DATASERVICO, DETALHAMENTOSERVICO, VERIFSERVICO, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into PRESTACAOSERVICO (VALORSERVICO, DATASERVICO, DETALHAMENTOSERVICO, VERIFSERVICO, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValorservico());
         ps.setString(2,obj.getDataservico());
@@ -59,7 +59,7 @@ public class PrestacaoServicoData extends Conexao{
                 rs.getString("DATASERVICO"),
                 rs.getString("DETALHAMENTOSERVICO"),
                 rs.getBoolean("VERIFSERVICO"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

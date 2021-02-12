@@ -20,7 +20,7 @@ public class CustosData extends Conexao{
     public CustosData() throws Exception{}
     
     public boolean incluir(CustosModel obj) throws Exception {
-        String sql="insert into CUSTOS (VALORCUSTO, DATACUSTO, DETALHAMENTOCUSTO, VERIFCUSTO, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into CUSTOS (VALORCUSTO, DATACUSTO, DETALHAMENTOCUSTO, VERIFCUSTO, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValorcusto());
         ps.setString(2,obj.getDatacusto());
@@ -59,7 +59,7 @@ public class CustosData extends Conexao{
                 rs.getString("DATACUSTO"),
                 rs.getString("DETALHAMENTOCUSTO"),
                 rs.getBoolean("VERIFCUSTO"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

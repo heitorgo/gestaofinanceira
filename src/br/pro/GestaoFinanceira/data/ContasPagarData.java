@@ -20,7 +20,7 @@ public class ContasPagarData extends Conexao{
     public ContasPagarData() throws Exception{}
     
     public boolean incluir(ContasPagarModel obj) throws Exception {
-        String sql="insert into CONTASPAGAR (VALORPAGAR, DATAPAGAR, DETALHAMENTOPAGAR, VERIFPAGAR, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into CONTASPAGAR (VALORPAGAR, DATAPAGAR, DETALHAMENTOPAGAR, VERIFPAGAR, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValorpagar());
         ps.setString(2,obj.getDatapagar());
@@ -59,7 +59,7 @@ public class ContasPagarData extends Conexao{
                 rs.getString("DATAPAGAR"),
                 rs.getString("DETALHAMENTOPAGAR"),
                 rs.getBoolean("VERIFPAGAR"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",
@@ -92,7 +92,7 @@ public class ContasPagarData extends Conexao{
                 rs.getString("DATAPAGAR"),
                 rs.getString("DETALHAMENTOPAGAR"),
                 rs.getBoolean("VERIFPAGAR"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",

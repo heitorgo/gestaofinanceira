@@ -20,7 +20,7 @@ public class DespesasFixasData extends Conexao{
     public DespesasFixasData() throws Exception{}
     
     public boolean incluir(DespesasFixasModel obj) throws Exception {
-        String sql="insert into DESPESASFIXAS (VALORDESPESAFIXA, FREQUENCIADESPESA, DETALHAMENTODESPESAFIXA, VERIFDESPESAFIXA, ID_EMPRESA) values(?,?,?,?,?)";
+        String sql="insert into DESPESASFIXAS (VALORDESPESAFIXA, FREQUENCIADESPESA, DETALHAMENTODESPESAFIXA, VERIFDESPESAFIXA, IDEMPRESA) values(?,?,?,?,?)";
         PreparedStatement ps = getConexao().prepareStatement(sql);
         ps.setFloat(1,obj.getValordespesafixa());
         ps.setString(2,obj.getFrequenciadespesa());
@@ -59,7 +59,7 @@ public class DespesasFixasData extends Conexao{
                 rs.getString("FREQUENCIADESPESA"),
                 rs.getString("DETALHAMENTODESPESAFIXA"),
                 rs.getBoolean("VERIFDESPESAFIXA"),
-                new EmpresaModel(rs.getInt("ID_EMPRESA"),
+                new EmpresaModel(rs.getInt("IDEMPRESA"),
                     "",
                     "",        
                     "",
